@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getLoginToken(un, pw) {
   try {
-    const res = await axios.post("http://127.0.0.1:8000/api/v1/login", {
+    const res = await axios.post("http://16.170.226.98/django/api/v1/login", {
       username: String(un),
       password: pw,
     });
@@ -24,11 +24,15 @@ export async function validateToken() {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://127.0.0.1:8000/api/v1/check-token", {
+    const res = await axios.get("http://16.170.226.98/django/api/v1/check-token", {
       headers: { Authorization: `token ${token}` },
     });
     if (res.status === 200) {
+      console.log(res.data)
+      const isSuperUser = res.data.is;
+      localStorage.setItem('isSuperUser', isSuperUser)
       return res.data;
+      
     } else {
       return false;
     }
@@ -43,7 +47,7 @@ export async function signup(un, pw, email) {
     email: email,
   };
   try {
-    const res = await axios.post("http://127.0.0.1:8000/api/v1/sign-up", data);
+    const res = await axios.post("http://16.170.226.98/django/api/v1/sign-up", data);
 
     if (res.status === 200) {
       localStorage.setItem("token", res.data.token);
@@ -57,13 +61,3 @@ export async function signup(un, pw, email) {
     return false
   }
 }
-
-
-export async function hasRent(p_id) {
-    const res = await axios.get(`http://127.0.0.1:8000/api/v1/check-token?p_id=${p_id}`)
-    if (res.status === 200)
-    return true
-    else {
-      return false
-    }
-  }

@@ -1,0 +1,31 @@
+@keyframes spinner-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-spinner {
+    border: 9px solid rgba(0, 0, 0, 0.1);
+    border-left: 9px solid #007bff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spinner-rotate 1s linear infinite;
+  }
+  
+  .spinner-div {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-while-spining {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

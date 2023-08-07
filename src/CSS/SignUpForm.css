@@ -19,6 +19,17 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  .contct-form {
+    direction: rtl;
+    width: 600px;
+    height: 400px;
+    padding: 25px;
+    background-color: #8cd0c8d5;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+
   .form-container h2 {
     text-align: center;
     margin-bottom: 1px;
@@ -50,7 +61,7 @@
   
   .form-container button {
     padding: 12px;
-    background-color: #000000;
+    background-color: #1a160d;
     color: white;
     border: none;
     border-radius: 11px;
@@ -60,7 +71,7 @@
   }
   
   .form-container button:hover {
-    background-color: #ffffff90;
+    background-color: #ffffffec;
     color: #000000;
   }
   
@@ -77,6 +88,7 @@
 
 
 .success-msg {
+  direction: rtl;
   display: flex;
   justify-content: center;
   height: 100vh;

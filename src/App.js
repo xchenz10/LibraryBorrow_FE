@@ -7,22 +7,23 @@ import './CSS/Nvbr.css'
 import './CSS/Login.css'
 import './CSS/SignUpForm.css'
 import './CSS/CreatePupil.css'
+import './CSS/Home.css'
+import './CSS/RentForm.css'
+import './CSS/Spinner.css'
+import './CSS/Dashboard.css'
 
-
-
-
-export const appContext = createContext(null);
+export const appContext = createContext(null)
 
 function App() {
 
-    const [userLogged, setUserLogged] = useState(false);
-    const [userName, setUserName] = useState("");
+    const [userLogged, setUserLogged] = useState(false)
+    const [userName, setUserName] = useState("")
   
     useEffect(() => {
       validateToken().then((response) => {
         
         if (response) {      
-          setUserLogged(true);      
+          setUserLogged(true)
           setUserName(response.user)
         }
       });
@@ -30,7 +31,8 @@ function App() {
   
 
   return (<>
-    <appContext.Provider value={{ userLogged, setUserLogged, userName , setUserName}}>
+    <appContext.Provider value={{ userLogged, setUserLogged, userName ,
+       setUserName }}>
       <Navbar/>
       <SiteRoutes/>
     </appContext.Provider>

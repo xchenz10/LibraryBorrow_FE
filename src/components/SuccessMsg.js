@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const SuccessMsg = ({ message }) => {
+function SuccessMsg() {
   return (
-    <div className='container' >
+      <div className='container' style={{paddingTop: '65px'}}>
       <div className='success-msg' >
          הפעולה בוצעה בהצלחה
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SuccessMsg;
+export default SuccessMsg

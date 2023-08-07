@@ -17,7 +17,7 @@ function Pupil() {
         const params = new URLSearchParams(window.location.search);
         const pupilId = params.get('p_id');
         if (pupilId) {
-          const res = await axios.get(`http://127.0.0.1:8000/api/v1/has-rent?p_id=${pupilId}`);
+          const res = await axios.get(`http://16.170.226.98/django/api/v1/has-rent?p_id=${pupilId}`);
           setRent(res.data.msg);
         } else {
           console.log('no rent');

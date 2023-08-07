@@ -7,7 +7,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
 
 
 
@@ -18,51 +17,49 @@ function CreatePupil() {
   const [grade, setGrade] = useState('')
   const [error, setError] = useState(false)
   const [msg, setMsg] = useState('')
-  const [addAnother, setAddAnother] = useState(false);
+  const [addAnother, setAddAnother] = useState(false)
   const nav = useNavigate()
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const handleChange = (event) => {
-    setGrade(event.target.value);
-  };
+    setGrade(event.target.value)
+  }
 
   const handleClose = () => {
     setOpen(false);
-  };
+  }
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const token = localStorage.getItem('token');
-    const isAuthenticated = validateToken(token);
+    const token = localStorage.getItem('token')
+    const isAuthenticated = validateToken(token)
 
       const data = { personal_id: personal_id,
         full_name: full_name,
-        grade: grade,};
+        grade: grade,}
       
         const config = { headers: {'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,},};
+          Authorization: `Token ${token}`,},}
 
     if (isAuthenticated)
       try {
-        const res = await axios.post("http://127.0.0.1:8000/api/v1/create-pupil",
-         data, config);
+        const res = await axios.post("http://16.170.226.98/django/api/v1/create-pupil",
+         data, config)
         if (res.status === 200)
         if (addAnother) {
-          window.location.reload();
+          window.location.reload()
         } else {
-          nav('/');
+          nav('/')
         }
       } catch (error) {
         setError(true)
-        setMsg(error.response.data.msg);
+        setMsg(error.response.data.msg)
       }
-    
-      
    }
   return (<>
   {userLogged && (

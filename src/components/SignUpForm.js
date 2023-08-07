@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { validateToken } from '../client';
 import { appContext } from '../App';
-import { MDBBtn } from 'mdb-react-ui-kit';
 
 function SignUpForm() {
 
@@ -33,7 +32,7 @@ function SignUpForm() {
         last_name: last_name, email: email,
       };
       try {
-        const res = await axios.post("http://127.0.0.1:8000/api/v1/sign-up", data);
+        const res = await axios.post("http://16.170.226.98/django/api/v1/sign-up", data);
     
         if (res.status === 200) {
         localStorage.setItem("token", res.data.token);

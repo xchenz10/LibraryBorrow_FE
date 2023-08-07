@@ -13,6 +13,7 @@ body {
 }
 
 .navbar {
+    direction: rtl;
     background-color: #3d3842f4;
     color: #9c801a;
     display: flex;
@@ -63,11 +64,8 @@ body {
 }
 
 .hello {
-    gap: 5rem;
-    font-size: 14px;
-    align-items:center;
-    justify-content: center;
-    margin-right: 150px;
+margin-left: 700px;
+font-weight: 500px;
 }
 
 .custom-table {
@@ -111,4 +109,16 @@ body {
 
 .slide {
     font-weight: 600;
+}
+
+.nav-dropdown-item {
+    direction: rtl;
+    gap: 15px;
+}
+
+.drop-down {
+    width: 180px;
+    height: 120px;
+    padding: 9px;
+    padding-top: 3px;
 }
